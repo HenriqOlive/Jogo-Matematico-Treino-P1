@@ -1,0 +1,54 @@
+h1, body{
+    margin: 0;
+    font-family: "Audiowide", sans-serif;
+}
+
+main{
+    text-align: center;
+}
+
+#area-jogo{
+    border: 1px solid black;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+img{
+    margin: 25px;
+    width: 50%;
+}
+
+#campo-equacao, #msg-resposta{
+    width: 50%;
+    border: 2px dashed black;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    margin: 5% auto;
+    font-family: "Audiowide", sans-serif;
+    color: white;
+}
+
+#buttons{
+    margin: 1%;
+}
+
+#buttons button{
+    width: 25%;
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin: 0 0 3% 0;
+    font-family: "Audiowide", sans-serif;
+}
+
+label, input{
+    font-size: 1.2rem;
+    font-family: "Audiowide", sans-serif;
+}
+
+input{
+    text-align: center;
+    border-radius: 1rem;
+}
