@@ -15,6 +15,8 @@ const operacoes = ['+', '-', 'x', '/'];
 let randChoseop = null;
 
 btnGera.addEventListener('click', () => {
+    resposta.value = '';
+
     geraValores();
     equacao.style.color = 'black';
     equacao.textContent = `${stNum} ${opChose} ${ndNum}`;
@@ -24,8 +26,11 @@ btnGera.addEventListener('click', () => {
 let geraValores = () => {
     randChoseop = Math.trunc(Math.random() * 4);
     opChose = operacoes[randChoseop];
-    stNum = Math.trunc(Math.random() * 9);
-    ndNum = Math.trunc(Math.random() * 9);
+    stNum = Math.trunc(Math.random() * 11);
+    ndNum = Math.trunc(Math.random() * 11);
+    if(randChoseop == 3 && (stNum == 0 || ndNum == 0)){
+        geraValores();
+    }
 }
 
 //Atribuindo evento ao botão de validar resposta
@@ -67,12 +72,12 @@ const verificaResposta = () => {
             resultado.textContent = `Deu ruim! A resposta correta é ${stNum * ndNum}`;
         }
     }else{
-        if(stNum / ndNum == respostaValue){
+        if((stNum / ndNum) == (respostaValue)){
             resultado.style.color = 'blue';
             resultado.textContent = 'Parabéns! Você acertou!';        
         }else{
             resultado.style.color = 'red';
-            resultado.textContent = `Deu ruim! A resposta correta é ${(stNum / ndNum).toFixed(2)}`;
+            resultado.textContent = `Deu ruim! A resposta correta é ${(stNum / ndNum)}`;
         }
     }
 }
